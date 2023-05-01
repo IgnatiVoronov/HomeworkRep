@@ -49,6 +49,14 @@ public class Main {
          * Проверка числа на простоту -- результат true, если число простое
          */
         simpleInt();
+
+
+        /**
+         * Пример
+         *
+         * Найти число вхождений цифры m в число n
+         */
+        mInM();
     }
 
     //подсчет секунд
@@ -186,5 +194,28 @@ public class Main {
             }
             System.out.println(simple);
         }
+    }
+
+
+    //число вхождений цифры m в число n
+    public static void mInM(){
+        String n;
+        String m;
+
+        int countM = 0;
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число n: ");
+        n = in.next();
+
+        System.out.print("Введите цифру m: ");
+        m = in.next();
+
+        for(int i=0; i<n.length();i++){
+            if(m.equals(String.valueOf(n.charAt(i)))){
+                countM++;
+            }
+        }
+        System.out.println("Число вхождений цифры m в число n: "+countM);
     }
 }
