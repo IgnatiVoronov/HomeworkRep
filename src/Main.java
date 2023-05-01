@@ -41,6 +41,14 @@ public class Main {
          * Определить, за какое время он одолел первую половину пути?
          */
         timeInPath();
+
+
+        /**
+         * Пример
+         *
+         * Проверка числа на простоту -- результат true, если число простое
+         */
+        simpleInt();
     }
 
     //подсчет секунд
@@ -153,6 +161,30 @@ public class Main {
         }else {
             timeInP = t[0]+t[1]+v[2]/(halfPath-(s[0]+s[1]));
             System.out.println("Время в пути: "+timeInP);
+        }
+    }
+
+
+    //простые числа
+    public static void simpleInt(){
+        int num;
+        boolean simple = true;
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        num = in.nextInt();
+
+        if(num<2) {
+            simple = false;
+            System.out.println(simple);
+        }else{
+            for (int i = 2; i <= Math.sqrt(num); i++){
+                if(num%i==0){
+                    simple = false;
+                    break;
+                }
+            }
+            System.out.println(simple);
         }
     }
 }
