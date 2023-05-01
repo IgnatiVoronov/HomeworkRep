@@ -31,6 +31,16 @@ public class Main {
          * вернуть строку вида: «21 год», «32 года», «12 лет».
          */
         getCorrectAge();
+
+
+        /**
+         * Простая (2 балла)
+         *
+         * Путник двигался t1 часов со скоростью v1 км/час, затем t2 часов — со скоростью v2 км/час
+         * и t3 часов — со скоростью v3 км/час.
+         * Определить, за какое время он одолел первую половину пути?
+         */
+        timeInPath();
     }
 
     //подсчет секунд
@@ -105,6 +115,44 @@ public class Main {
             System.out.println(age+" года");
         }else{
             System.out.println(age+" лет");
+        }
+    }
+
+
+    //время потраченное на половину пути
+    public static void timeInPath(){
+        int t[] = new int[3];   //t1 - 13
+        int v[] = new int[3];   //v1 - v3
+        int s[] = new int[3];   //s1 - s3
+        double path = 0;        //весь путь
+        double halfPath = 0;    //половина пути
+        double timeInP = 0;  //время за первую половину пути
+
+        Scanner in = new Scanner(System.in);
+        for(int i=0;i<t.length; i++){
+            System.out.print("Введите значение t"+(i+1)+": ");
+            t[i] = in.nextInt();
+            timeInP += t[i];
+        }
+
+        for(int i=0;i<t.length; i++){
+            System.out.print("Введите значение v"+(i+1)+": ");
+            v[i] = in.nextInt();
+            s[i] = v[i]*t[i];
+            path += (v[i]*t[i]);
+        }
+
+        halfPath=path/2;
+
+        if (halfPath<=s[0]){
+            timeInP = v[0]/halfPath;
+            System.out.println("Время в пути: "+timeInP);
+        } else if (halfPath>s[0] && halfPath<=(s[0]+s[1])) {
+            timeInP = t[0] + v[1]/(halfPath-s[0]);
+            System.out.println("Время в пути: "+timeInP);
+        }else {
+            timeInP = t[0]+t[1]+v[2]/(halfPath-(s[0]+s[1]));
+            System.out.println("Время в пути: "+timeInP);
         }
     }
 }
