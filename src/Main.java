@@ -57,6 +57,17 @@ public class Main {
          * Найти число вхождений цифры m в число n
          */
         mInM();
+
+
+        /**
+         * Простая (2 балла)
+         *
+         * Найти количество цифр в заданном числе n.
+         * Например, число 1 содержит 1 цифру, 456 -- 3 цифры, 65536 -- 5 цифр.
+         *
+         * Использовать операции со строками в этой задаче запрещается.
+         */
+        numberOfDigit();
     }
 
     //подсчет секунд
@@ -218,4 +229,27 @@ public class Main {
         }
         System.out.println("Число вхождений цифры m в число n: "+countM);
     }
+
+
+    //количество цифр в числе
+    public static void numberOfDigit(){
+        int num;
+
+        int numberOfD = 1;
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        num = in.nextInt();
+
+        for(int i=10; i<=num*10; i*=10){
+            if(num/i<1){
+                break;
+            }else{
+                numberOfD++;
+            }
+        }
+        System.out.println("Колличество цифр: "+numberOfD);
+    }
 }
+
+
