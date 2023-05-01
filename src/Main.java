@@ -14,6 +14,8 @@ public class Main {
        getSec();
 
 
+
+       //задачи из lesson 2 и lesson 3
         /**
          * Пример
          *
@@ -21,6 +23,14 @@ public class Main {
          */
         numberOfRoots();
 
+
+        /**
+         * Простая (2 балла)
+         *
+         * Мой возраст. Для заданного 0 < n < 200, рассматриваемого как возраст человека,
+         * вернуть строку вида: «21 год», «32 года», «12 лет».
+         */
+        getCorrectAge();
     }
 
     //подсчет секунд
@@ -31,7 +41,6 @@ public class Main {
 
         System.out.println(sum+" seconds have passed");
     }
-
     public static void getSec(){
         int hours;
         int minutes;
@@ -49,7 +58,6 @@ public class Main {
 
         secPassCalk(hours, minutes, seconds);
     }
-
 
 
     //число корней квадратного уравнения
@@ -84,5 +92,19 @@ public class Main {
     }
 
 
+    //подставить  к возрасту "год" "года" или "лет"
+    public static void getCorrectAge(){
+        int age;
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите возраст от 0 до 200: ");
+        age = in.nextInt();
 
+        if (age==1 || (age>20 && age%10==1)){
+            System.out.println(age+" год");
+        } else if(age%10==2 || age%10==3 || age%10==4){
+            System.out.println(age+" года");
+        }else{
+            System.out.println(age+" лет");
+        }
+    }
 }
