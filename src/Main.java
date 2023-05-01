@@ -11,8 +11,15 @@ public class Main {
          * Пользователь задает время в часах, минутах и секундах, например, 8:20:35.
          * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
          */
-
        getSec();
+
+
+        /**
+         * Пример
+         *
+         * Найти число корней квадратного уравнения ax^2 + bx + c = 0
+         */
+        numberOfRoots();
 
     }
 
@@ -42,5 +49,40 @@ public class Main {
 
         secPassCalk(hours, minutes, seconds);
     }
+
+
+
+    //число корней квадратного уравнения
+    public static void numberOfRoots(){
+
+        int a;//
+        int b;//  коэффициенты уравнения
+        int c;//
+
+        double d;//дискриминант
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("Коэффициент a: ");
+        a = in.nextInt();
+
+        System.out.print("Коэффициент b: ");
+        b = in.nextInt();
+
+        System.out.print("Коэффициент c: ");
+        c = in.nextInt();
+        System.out.println("Уравнение: "+a+"x^2+"+b+"x+"+c+"=0");
+
+        d=Math.pow(b,2)-4*a*c;
+
+        if(d<0){
+            System.out.println("Корней нет");
+        }else if(d==0){
+            System.out.println("Уравнение иеет один корень");
+        }else{
+            System.out.println("Уравнение иеет два корня");
+        }
+    }
+
+
 
 }
