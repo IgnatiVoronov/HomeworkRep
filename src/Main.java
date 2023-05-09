@@ -11,7 +11,7 @@ public class Main {
          * Пользователь задает время в часах, минутах и секундах, например, 8:20:35.
          * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
          */
-       getSec();
+       //getSec();
 
 
 
@@ -21,7 +21,7 @@ public class Main {
          *
          * Найти число корней квадратного уравнения ax^2 + bx + c = 0
          */
-        numberOfRoots();
+        //numberOfRoots();
 
 
         /**
@@ -30,7 +30,7 @@ public class Main {
          * Мой возраст. Для заданного 0 < n < 200, рассматриваемого как возраст человека,
          * вернуть строку вида: «21 год», «32 года», «12 лет».
          */
-        getCorrectAge();
+        //getCorrectAge();
 
 
         /**
@@ -40,7 +40,7 @@ public class Main {
          * и t3 часов — со скоростью v3 км/час.
          * Определить, за какое время он одолел первую половину пути?
          */
-        timeInPath();
+        //timeInPath();
 
 
         /**
@@ -48,7 +48,7 @@ public class Main {
          *
          * Проверка числа на простоту -- результат true, если число простое
          */
-        simpleInt();
+        //simpleInt();
 
 
         /**
@@ -56,7 +56,7 @@ public class Main {
          *
          * Найти число вхождений цифры m в число n
          */
-        mInM();
+        //mInM();
 
 
         /**
@@ -67,7 +67,26 @@ public class Main {
          *
          * Использовать операции со строками в этой задаче запрещается.
          */
-        numberOfDigit();
+        //numberOfDigit();
+
+
+        /*
+        Задание: сделать программу, в которой будет использоваться наследование и абстрактные классы с интерфейсами.
+        Сделать геттеры-сеттеры, переопределить hashCode equals и toString. Минимум по 2 метода в классе.
+        Минимум по 2 поля в классе. Сделать конструктор без параметров и со всеми полями класса.
+        Тема 2. Животное -> Кот, Крокодил
+         */
+        Cat cat1 = new Cat("Черный",3,15);
+        Cat cat = new Cat("Белый",4,10);
+        System.out.println("cat1\n"+cat1.toString()+"\ncat\n"+cat.toString());
+        System.out.println("Объекты cat1 и cat равны (по hashCode) - "+(cat1.hashCode()==cat.hashCode()));
+        System.out.println("Объекты cat1 и cat равны (по equals) - "+cat1.equals(cat));
+        System.out.println();
+        Crocodile croc1 = new Crocodile();
+        Crocodile croc = new Crocodile();
+        System.out.println("croc1 - "+croc1.toString()+"\ncroc - "+croc.toString());
+        System.out.println("Объекты croc1 и croc равны (по hashCode) - "+(croc1.hashCode()==croc.hashCode()));
+        System.out.println("Объекты croc1 и croc равны (по equals) - "+croc1.equals(croc));
     }
 
     //подсчет секунд
