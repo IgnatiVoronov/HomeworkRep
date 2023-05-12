@@ -99,6 +99,17 @@ public class Main {
          * и номер элемента, который является ее началом.
          */
         arrSequence();
+
+
+        /**
+         * Сложная (5 баллов)
+         *
+         * Перевести натуральное число n > 0 в римскую систему.
+         * Римские цифры: 1 = I, 4 = IV, 5 = V, 9 = IX, 10 = X, 40 = XL, 50 = L,
+         * 90 = XC, 100 = C, 400 = CD, 500 = D, 900 = CM, 1000 = M.
+         * Например: 23 = XXIII, 44 = XLIV, 100 = C
+         */
+        arabicToRoman();
     }
 
     //подсчет секунд
@@ -322,6 +333,61 @@ public class Main {
         System.out.println("Номер/номера первого элемента последовательности/последовательностей - "+firstNumOfSeq);
 
 
+    }
+
+
+    public static void arabicToRoman(){
+        int arabicNumber = 100;
+        String[] s = new String[]{"I","V","X","L","C","D","M"}; //массив символов для формирования римского числа
+        String romeNumber = "";                                 //сюда складываем римское число
+
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите число от 1 до 3999: ");
+        arabicNumber = in.nextInt();
+
+        for(int i=1000; i>=1; i/=10){
+            int a = -1;//индексы, указывающие на нужную позицию в массиве римских чисел
+            int b = -1;//в зависимости от длины конвертируемого числа
+            int c = -1;//
+
+            switch (i){
+                case 1000:
+                    a=6;
+                    break;
+                case 100:
+                    c=6;
+                    b=5;
+                    a=4;
+                    break;
+                case 10:
+                    c=4;
+                    b=3;
+                    a=2;
+                    break;
+                case 1:
+                    c=2;
+                    b=1;
+                    a=0;
+                    break;
+            }
+            //Алгоритм отображения цифры в римском виде.
+            if(arabicNumber/i>=5 && arabicNumber/i<=8){
+                romeNumber  += s[b];
+                for(int j=0;j<(arabicNumber/i)%5; j++){
+                    romeNumber  += s[a];
+                }
+            }else if(arabicNumber/i==9) {
+                romeNumber += s[a]+s[c];
+            }else if(arabicNumber/i==4){
+                romeNumber += s[a]+s[b];
+            }else{
+                for(int k=0;k<arabicNumber/i; k++){
+                    romeNumber += s[a];
+                }
+            }
+            arabicNumber %=i; //отбрасывыем больший разряд числа
+        }
+        System.out.println("Число в римской системе - "+romeNumber);
     }
 }
 
