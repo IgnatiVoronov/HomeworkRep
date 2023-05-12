@@ -70,12 +70,13 @@ public class Main {
         //numberOfDigit();
 
 
-        /*
+        /**
         Задание: сделать программу, в которой будет использоваться наследование и абстрактные классы с интерфейсами.
         Сделать геттеры-сеттеры, переопределить hashCode equals и toString. Минимум по 2 метода в классе.
         Минимум по 2 поля в классе. Сделать конструктор без параметров и со всеми полями класса.
         Тема 2. Животное -> Кот, Крокодил
          */
+        /*
         Cat cat1 = new Cat("Черный",3,15);
         Cat cat = new Cat("Белый",4,10);
         System.out.println("cat1\n"+cat1.toString()+"\ncat\n"+cat.toString());
@@ -87,6 +88,17 @@ public class Main {
         System.out.println("croc1 - "+croc1.toString()+"\ncroc - "+croc.toString());
         System.out.println("Объекты croc1 и croc равны (по hashCode) - "+(croc1.hashCode()==croc.hashCode()));
         System.out.println("Объекты croc1 и croc равны (по equals) - "+croc1.equals(croc));
+        */
+
+
+        /**
+         *
+         * Найти в массиве самую длинную последовательность,
+         * состоящую из одинаковых элементов. Вывести на экран
+         * количество элементов самой длиной последовательности
+         * и номер элемента, который является ее началом.
+         */
+        arrSequence();
     }
 
     //подсчет секунд
@@ -268,6 +280,48 @@ public class Main {
             }
         }
         System.out.println("Колличество цифр: "+numberOfD);
+    }
+
+
+    public static void arrSequence(){
+        String[] arr = new String[10];
+
+        int sumOfElem = 1;          //количество элементов последовательности
+        int largestSumOfElem = 1;   //количество элементов наибольшей последовательности
+        String firstNumOfSeq = "";  //номер элемента, который является началом последовательности
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите элементы массива arr");
+        for(int i=0; i<arr.length; i++){
+            System.out.print("arr["+i+"] = ");
+            arr[i] = in.next();
+        }
+
+        System.out.println("Готовый массив:");
+        for(String s:arr) System.out.print(s+"|");
+        System.out.println();
+        for (int i=1; i<arr.length; i++) {
+            //сравниваем соседние элементы и если они похожи вычисляем их сумму
+            if(arr[i-1].equals(arr[i])){
+                sumOfElem++;
+                //сравниваем текущую сумму элементов с наибольшей и определяем первый элемент
+            }else if(sumOfElem>largestSumOfElem) {
+                largestSumOfElem = sumOfElem;
+                firstNumOfSeq = String.valueOf(i - largestSumOfElem);
+                sumOfElem = 1;
+            }else if(sumOfElem==largestSumOfElem){
+                firstNumOfSeq = firstNumOfSeq+" "+(i - largestSumOfElem);
+                sumOfElem = 1;
+            }else{
+                sumOfElem = 1;
+            }
+        }
+
+        System.out.println("Количество элементов самой длинной последовательности/последовательностей - "
+                +largestSumOfElem);
+        System.out.println("Номер/номера первого элемента последовательности/последовательностей - "+firstNumOfSeq);
+
+
     }
 }
 
