@@ -1,4 +1,4 @@
-import java.sql.SQLOutput;
+package Lessons1to7.Classes;
 
 public abstract class Animal {
 

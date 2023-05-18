@@ -1,3 +1,5 @@
+package Lessons1to7;
+
 import java.util.Scanner;
 
 public class Main {
@@ -77,14 +79,14 @@ public class Main {
         Тема 2. Животное -> Кот, Крокодил
          */
         /*
-        Cat cat1 = new Cat("Черный",3,15);
-        Cat cat = new Cat("Белый",4,10);
+        Lessons1to7.Classes.Cat cat1 = new Lessons1to7.Classes.Cat("Черный",3,15);
+        Lessons1to7.Classes.Cat cat = new Lessons1to7.Classes.Cat("Белый",4,10);
         System.out.println("cat1\n"+cat1.toString()+"\ncat\n"+cat.toString());
         System.out.println("Объекты cat1 и cat равны (по hashCode) - "+(cat1.hashCode()==cat.hashCode()));
         System.out.println("Объекты cat1 и cat равны (по equals) - "+cat1.equals(cat));
         System.out.println();
-        Crocodile croc1 = new Crocodile();
-        Crocodile croc = new Crocodile();
+        Lessons1to7.Classes.Crocodile croc1 = new Lessons1to7.Classes.Crocodile();
+        Lessons1to7.Classes.Crocodile croc = new Lessons1to7.Classes.Crocodile();
         System.out.println("croc1 - "+croc1.toString()+"\ncroc - "+croc.toString());
         System.out.println("Объекты croc1 и croc равны (по hashCode) - "+(croc1.hashCode()==croc.hashCode()));
         System.out.println("Объекты croc1 и croc равны (по equals) - "+croc1.equals(croc));

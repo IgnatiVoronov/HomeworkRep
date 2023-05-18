@@ -1,4 +1,8 @@
-public class Crocodile extends Animal implements AnimalSound{
+package Lessons1to7.Classes;
+
+import Lessons1to7.AnimalSound;
+
+public class Crocodile extends Animal implements AnimalSound {
     Crocodile(){ super(); }
     Crocodile(String color,int age,int weight){
         super(color, age, weight);
