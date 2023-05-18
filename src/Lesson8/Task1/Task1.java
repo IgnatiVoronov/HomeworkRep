@@ -30,7 +30,7 @@ public class Task1 {
     }
 
     public static String mostExpensiveItemFinder(String input) throws IllegalStringFormatException {
-        String mustExpensiveItem = "";
+        String mostExpensiveItem = "";
         double maxPrise = -1;
         //сравниваем строку с шаблоном
         if (!input.matches("([а-яА-Я]+ \\d+\\.?\\d+; )*([а-яА-я]+ \\d+\\.?\\d+)")) {
@@ -46,11 +46,11 @@ public class Task1 {
 
             if (price > maxPrise) {
                 maxPrise = price;
-                mustExpensiveItem = item;
+                mostExpensiveItem = item;
             } else if (price == maxPrise){
-                mustExpensiveItem = mustExpensiveItem+", "+item;
+                mostExpensiveItem = mostExpensiveItem+", "+item;
             }
         }
-        return mustExpensiveItem;
+        return mostExpensiveItem;
     }
 }
