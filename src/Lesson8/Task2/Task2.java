@@ -26,7 +26,7 @@ public class Task2 {
     }
 
     public static int sumOfNumbers(String input) throws IllegalArgumentException {
-        int sumOfNum=0;
+        int sumOfNum = 0;
         //проверяем строку на верность формата
         if (!input.matches("(\\d+ [+-] )*(\\d+)")) {
             throw new IllegalArgumentException();
@@ -37,24 +37,24 @@ public class Task2 {
         Matcher matcher = pattern.matcher(input);
         Matcher matcher1 = pattern1.matcher(input);
 
-        int[] nums = new int[input.length()/2];               //массив для чисел
-        String [] symb = new String[input.length()/2];        //массив для знаков
+        int[] nums = new int[input.length() / 2];               //массив для чисел
+        String[] symb = new String[input.length() / 2];        //массив для знаков
         int count = 0;
         while (matcher.find()) {                            //заполняем массив числами
             nums[count] = Integer.parseInt(matcher.group(1));
             count++;
         }
-        count=0;
+        count = 0;
         while (matcher1.find()) {                           //заполняем массив знаками
             symb[count] = matcher1.group(1);
             count++;
         }
         sumOfNum = nums[0];
-        for(int i =0;i<nums.length;i++){                    //решаем выражение
-            if(Objects.equals(symb[i], "+")){
-                sumOfNum+=nums[i+1];
-            }else if(Objects.equals(symb[i], "-")){
-                sumOfNum-=nums[i+1];
+        for (int i = 0; i < nums.length; i++) {                    //решаем выражение
+            if (Objects.equals(symb[i], "+")) {
+                sumOfNum += nums[i + 1];
+            } else if (Objects.equals(symb[i], "-")) {
+                sumOfNum -= nums[i + 1];
             }
         }
 
