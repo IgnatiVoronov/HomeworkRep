@@ -1,4 +1,4 @@
-package Lesson13.Task1;
+package lesson13.task1;
 
 public class USB {
     private String version;

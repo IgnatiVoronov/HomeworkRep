@@ -1,6 +1,6 @@
-package Lesson8.Task1;
+package lesson8.task1;
 
-import Lesson8.Task1.Exceptions.IllegalStringFormatException;
+import lesson8.task1.Exceptions.IllegalStringFormatException;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;

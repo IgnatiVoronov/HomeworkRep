@@ -1,4 +1,4 @@
-package Lesson8.Task2;
+package lesson8.task2;
 
 import java.util.Objects;
 import java.util.Scanner;
