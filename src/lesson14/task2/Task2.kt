@@ -15,12 +15,10 @@ import java.awt.Point
  * Расстояние между пересекающимися окружностями считать равным 0.0.
  */
 data class Circle(val center: Point, val radius: Double) {
-    fun distance(other: Circle): Double? {
+    fun distance(other: Circle): Double {
         if ((center.distance(other.center)) < (radius + other.radius)) {
-            println("Окружности пересекаются")
-            return null
-        }
-        print("Расстояние между двумя окружностями - ")
+            return 0.0
+        }        
         return (center.distance(other.center)) - (radius + other.radius)
     }
 }
